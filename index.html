@@ -12,12 +12,93 @@
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
-        <style>
-        #map {
-            width: 1027px;
-            height: 540px;
-        }
-        </style>
+       <style>
+
+/* ===============================
+   RESPONSIVE MAP
+   =============================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#map {
+	display: block;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    background-color: #ffffff;
+}
+
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 768px) {
+
+    /* Ocultar descripción larga */
+    .abstractUncollapsed {
+        display: none !important;
+    }
+
+    /* Título compacto */
+    .info {
+        max-width: 68vw !important;
+        padding: 4px 6px !important;
+    }
+
+    .info h2 {
+        font-size: 12px !important;
+        line-height: 1.15 !important;
+        margin: 0 !important;
+    }
+
+    /* Contenedor de capas */
+    .leaflet-control-layers {
+        max-width: calc(100vw - 24px) !important;
+        max-height: 80dvh !important;
+        overflow: hidden !important;
+        z-index: 1000 !important;
+    }
+
+    /* Panel abierto */
+    .leaflet-control-layers-expanded {
+        width: 88vw !important;
+        max-width: 340px !important;
+        align-items: stretch !important;
+    }
+
+    /* Scroll dentro de la lista */
+    .leaflet-control-layers-list {
+        max-height: calc(80dvh - 50px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Mantener visible el botón de capas */
+    .leaflet-control-layers-expanded
+    .leaflet-control-layers-toggle {
+        display: block !important;
+        width: 30px !important;
+        height: 30px !important;
+        align-self: flex-end !important;
+    }
+
+    /* Nombres largos */
+    .leaflet-layerstree-header-label {
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+}
+</style>
         <title>Virgen de Los Andes – Priorización de áreas y planificación de muestreo</title>
     </head>
     <body>
