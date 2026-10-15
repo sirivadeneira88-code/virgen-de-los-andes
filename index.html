@@ -703,7 +703,7 @@ body {
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_area_pva_7');
@@ -711,11 +711,10 @@ body {
         map.getPane('pane_area_pva_7').style['mix-blend-mode'] = 'normal';
         var layer_area_pva_7 = new L.geoJson(json_area_pva_7, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_area_pva_7',
             layerName: 'layer_area_pva_7',
             pane: 'pane_area_pva_7',
-            onEachFeature: pop_area_pva_7,
             style: style_area_pva_7_0,
         });
         bounds_group.addLayer(layer_area_pva_7);
