@@ -694,31 +694,37 @@ body {
         }
 
         function style_area_pva_7_0() {
-            return {
-                pane: 'pane_area_pva_7',
-                opacity: 1,
-                color: 'rgba(255,0,29,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
-                fillOpacity: 0,
-                interactive: false,
-            }
-        }
-        map.createPane('pane_area_pva_7');
-        map.getPane('pane_area_pva_7').style.zIndex = 407;
-        map.getPane('pane_area_pva_7').style['mix-blend-mode'] = 'normal';
-        var layer_area_pva_7 = new L.geoJson(json_area_pva_7, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_area_pva_7',
-            layerName: 'layer_area_pva_7',
-            pane: 'pane_area_pva_7',
-            style: style_area_pva_7_0,
-        });
-        bounds_group.addLayer(layer_area_pva_7);
-        map.addLayer(layer_area_pva_7);
+    return {
+        pane: 'pane_area_pva_7',
+        opacity: 1,
+        color: 'rgba(255,0,29,1.0)',
+        dashArray: '',
+        lineCap: 'square',
+        lineJoin: 'bevel',
+        weight: 4.0,
+        fillOpacity: 0,
+        interactive: false,
+    }
+}
+
+map.createPane('pane_area_pva_7');
+map.getPane('pane_area_pva_7').style.zIndex = 407;
+map.getPane('pane_area_pva_7').style['mix-blend-mode'] = 'normal';
+
+/* Desactiva completamente mouse/touch sobre el área */
+map.getPane('pane_area_pva_7').style.pointerEvents = 'none';
+
+var layer_area_pva_7 = new L.geoJson(json_area_pva_7, {
+    attribution: '',
+    interactive: false,
+    dataVar: 'json_area_pva_7',
+    layerName: 'layer_area_pva_7',
+    pane: 'pane_area_pva_7',
+    style: style_area_pva_7_0,
+});
+
+bounds_group.addLayer(layer_area_pva_7);
+map.addLayer(layer_area_pva_7);
         function pop_anomalias_Cu_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
